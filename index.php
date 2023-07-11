@@ -1,9 +1,11 @@
 <?php
 require __DIR__.'/products.php';
+require __DIR__.'/food.php';
 
-$dog = new Products ('https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg', 'Nova Food' , 'dog');
+$product1 = new Food('https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg', 'Royal Canin Mini Adult', 'Cane', '545g', ['prosciutto', 'riso']);
+$product1->setPrice(43.99);
 
-var_dump($dog)
+var_dump($product1);
 
 ?>
 
