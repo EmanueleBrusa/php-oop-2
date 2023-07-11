@@ -56,6 +56,21 @@ var_dump($gioco2);*/
     <title>oop 2</title>
 </head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <?php foreach($products as $product) { ?>
+        <div class="col-4">
+            <div class="card">
+                <img src="<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->item; ?>">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $product->item; ?></h5>
+                    <p class="card-text"><?php echo $product->trait; ?></p>
+                    <p class="card-text">Price: <?php echo $product->getPrice(); ?></p>
+                </div>
+            </div>
+        </div> 
+        <?php } ?>
+    </div>
+</div>
 </body>
 </html>
