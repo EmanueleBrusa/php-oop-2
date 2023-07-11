@@ -71,12 +71,14 @@ var_dump($gioco2);*/
 </head>
 <body>
 <div class="container">
+    <h1 class="mb-5">Boolshop</h1>
     <div class="row">
+        <h2>I nostri prodotti</h2>
         <?php foreach($products as $product) { ?>
-        <div class="col-4">
-            <div class="card">
+        <div class="col-4 mb-4">
+            <div class="card card-height">
                 <img src="<?php echo $product->pic; ?>" class="pic-product" alt="<?php echo $product->item; ?>">
-                <div class="card-body">
+                <div class="card-body bg-white">
                     <ul class="list-unstyled">
                         <li>
                             <h3>
