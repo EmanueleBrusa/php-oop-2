@@ -97,6 +97,9 @@ var_dump($gioco2);*/
                                 <?php echo $product->animal ?>
                             </div>
                         </li>
+                        <div class="price">
+                            Prezzo: &euro; <?php echo $product->getPrice() ?>
+                        </div>
                         <li>
                             <?php if(isset($product->weight)){
                                 echo 'Peso Netto: '.$product->weight;
@@ -104,6 +107,16 @@ var_dump($gioco2);*/
                                 echo 'Materiale: '.$product->materials;
                             } else if(isset($product->traits)){
                                 echo 'Caratteristiche: '.$product->traits;
+                            } ?>
+                        </li>
+                        <li>
+                            <?php if(isset($product->ingredients)){
+                                echo 'Ingredienti: ';
+                                foreach($product->ingredients as $ingredient){
+                                    echo $ingredient.', ';
+                                };
+                            } else if(isset($product->size)){
+                                echo 'Dimensioni: '.$product->size;
                             } ?>
                         </li>
                     </ul>
