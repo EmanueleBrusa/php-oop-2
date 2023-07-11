@@ -1,3 +1,13 @@
+<?php
+require __DIR__.'/products.php';
+
+$dog = new Products ('https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg', 'Nova Food' , 'dog');
+
+var_dump($dog)
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -13,6 +23,6 @@
     <title>oop 2</title>
 </head>
 <body>
-    
+
 </body>
 </html>
