@@ -4,8 +4,13 @@ require __DIR__.'/food.php';
 require __DIR__.'/accessories.php';
 require __DIR__.'/toys.php';
 
-$product1 = new Food('https://arcaplanet.vtexassets.com/arquivos/ids/243820/royal-canin-size-cane-mini-adult.jpg', 'Royal Canin Mini Adult', 'Cane', '545g', ['prosciutto', 'riso']);
+$product1 = new Food('https://www.planetfarm.it/5654-large_default/royal-canin-mini-adult-12-35kg.jpg', 'Royal Canin Mini Adult', 'Cane', '545g', ['prosciutto', 'riso']);
 $product1->setPrice(43.99);
+
+//modifico la grandezza dell'immagine
+/*$imageUrl = $product1->pic;
+$modifiedImageUrl = $product1->modifyImageUrlSize($imageUrl, 100, 100);
+$product1->pic = $modifiedImageUrl;*/
 
 $product2 = new Food('https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg', 'Almo Nature Holistic Maintenance Medium Large Tonno e Riso', 'Cane', '600g', ['manzo', 'cereali']);
 $product2->setPrice(44.99);
@@ -70,11 +75,38 @@ var_dump($gioco2);*/
         <?php foreach($products as $product) { ?>
         <div class="col-4">
             <div class="card">
-                <img src="<?php echo $product->pic; ?>" class="card-img-top" alt="<?php echo $product->item; ?>">
+                <img src="<?php echo $product->pic; ?>" class="pic-product" alt="<?php echo $product->item; ?>">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $product->item; ?></h5>
-                    <p class="card-text"><?php echo $product->trait; ?></p>
-                    <p class="card-text">Price: <?php echo $product->getPrice(); ?></p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <h3>
+                                <?php echo $product->item ?>
+                            </h3>
+                        </li>
+                        <li>
+                            <div class="animals">
+                                <i class="fa-solid <?php if($product->animal === 'Cane'){
+                                    echo 'fa-dog';
+                                } else if($product->animal === 'Gatto'){
+                                    echo 'fa-cat';
+                                } else if($product->animal === 'Pesce'){
+                                    echo 'fa-fish';
+                                } else if($product->animal === 'Uccello'){
+                                    echo 'fa-dove';
+                                } ?>"></i>
+                                <?php echo $product->animal ?>
+                            </div>
+                        </li>
+                        <li>
+                            <?php if(isset($product->weight)){
+                                echo 'Peso Netto: '.$product->weight;
+                            } else if(isset($product->materials)){
+                                echo 'Materiale: '.$product->materials;
+                            } else if(isset($product->traits)){
+                                echo 'Caratteristiche: '.$product->traits;
+                            } ?>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div> 

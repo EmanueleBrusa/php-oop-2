@@ -18,5 +18,11 @@ class Products {
     public function getPrice(){
         return $this->price;
     }
+
+    /*function modifyImageUrlSize($imageUrl, $width, $height) {
+        //mdoifichiamo la dimensione dell'immagine dell'url
+        $modifiedUrl = $imageUrl . '?width=' . $width . '&height=' . $height;
+        return $modifiedUrl;
+    }*/
 }
 ?>
