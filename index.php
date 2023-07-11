@@ -28,7 +28,16 @@ $product7->setPrice(13.49);
 $product8 = new Toys ('https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg', 'Topini di peluche Trixie', 'Gatto', 'Morbido con codina corta', '8,5 cm x 10 cm');
 $product8->setPrice(4.99);
 
-
+$products = [
+    $product1,
+    $product2,
+    $product3,
+    $product4,
+    $product5,
+    $product6,
+    $product7,
+    $product8
+];
 /*var_dump($mangime1);
 var_dump($mangime2);
 var_dump($mangime3);
@@ -61,7 +70,7 @@ var_dump($gioco2);*/
         <?php foreach($products as $product) { ?>
         <div class="col-4">
             <div class="card">
-                <img src="<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->item; ?>">
+                <img src="<?php echo $product->pic; ?>" class="card-img-top" alt="<?php echo $product->item; ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $product->item; ?></h5>
                     <p class="card-text"><?php echo $product->trait; ?></p>
